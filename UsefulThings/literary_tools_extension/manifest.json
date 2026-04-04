@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Thinking Companion",
+  "version": "1.0",
+  "description": "Quick notes and thought capture",
+  "action": {
+    "default_popup": "literary_tools.html"
+  },
+  "permissions": ["storage"]
+}
