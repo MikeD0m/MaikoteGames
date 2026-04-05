@@ -3,33 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Literary Tool</title>
+  <title>Literary Tools</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="literary_tools.js"></script>
+  <script src="menu.js" defer></script>
 </head>
 <body>
-  <div class="vert_box">
-    <h2>Literary Tools</h2>
-
-    <button class="menu_btn" id="note_btn" onclick="ActivateNoteMenu()">Note Taker</button>
+  <h2>Literary Tools</h2>
+  <h3>By Maikote</h3>
+  <div id="literary_tool_container">
+    <button id="note_btn" class="menu_btn">Note Taker</button>
     <div id="note_menu" hidden>
-      <div class="menu_vert_box" id="save_load_options">
-        <button class="action_btn" onclick="ActivateNewNoteEntry()">New</button>
-        <button class="action_btn" onclick="ActivateLoadMenu()">Load</button>
-        <div id="new_note" hidden>
-          <textarea id="noteInput" placeholder="Write your thoughts..."></textarea>
-          <button id="save_note" onclick="CancelNewNoteEntry()">Save</button>
-          <button id="cancel_note" onclick="CancelNewNoteEntry()">Cancel</button>
-        </div>
-        <div id="load_menu" hidden>
-        <p>Choose a note to load:</p>
-        <button onclick="Return()">Return</button>
-        </div>
-      </div>
-      
+      <button id="new_note_btn" class="menu_btn">New</button>
+      <button id="load_note_btn" class="menu_btn">Load</button>
+    </div>
+    <button id="exit_btn" class="menu_btn">Exit</button>
+
+    <!-- New Note -->
+    <div id="new_note" hidden>
+      <input type="text" id="note_name" placeholder="Note Name" />
+      <textarea id="noteInput" placeholder="Write your thoughts..."></textarea>
+      <button id="save_note">Save</button>
+      <button id="cancel_note">Cancel</button>
     </div>
 
-    <button class="menu_btn" onclick="consoleMsg('exit')">Exit</button>
-  </div>  
+    <!-- Load Notes -->
+    <div id="load_menu" hidden>
+      <p id="saved_notes_label">Saved Notes:</p>
+      <div id="notes_list"></div>
+      <button id="return_btn">Return</button>
+    </div>
+  </div>
 </body>
 </html>
