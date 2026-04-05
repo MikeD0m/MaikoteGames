@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Literary Tool</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="literary_tools.js"></script>
+</head>
+<body>
+  <div class="vert_box">
+    <h2>Literary Tools</h2>
+
+    <button class="menu_btn" id="note_btn" onclick="ActivateNoteMenu()">Note Taker</button>
+    <div id="note_menu" hidden>
+      <div class="menu_vert_box" id="save_load_options">
+        <button class="action_btn" onclick="ActivateNewNoteEntry()">New</button>
+        <button class="action_btn" onclick="ActivateLoadMenu()">Load</button>
+        <div id="new_note" hidden>
+          <textarea id="noteInput" placeholder="Write your thoughts..."></textarea>
+          <button id="save_note" onclick="CancelNewNoteEntry()">Save</button>
+          <button id="cancel_note" onclick="CancelNewNoteEntry()">Cancel</button>
+        </div>
+        <div id="load_menu" hidden>
+        <p>Choose a note to load:</p>
+        <button onclick="Return()">Return</button>
+        </div>
+      </div>
+      
+    </div>
+
+    <button class="menu_btn" onclick="consoleMsg('exit')">Exit</button>
+  </div>  
+</body>
+</html>

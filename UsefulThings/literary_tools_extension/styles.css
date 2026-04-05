@@ -1,18 +1,23 @@
-body {
-  width: 300px;
-  font-family: Arial;
+.vert_box{
+  border: 2px solid black;
+  height: 400px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.menu_btn{
+  width: 100px;
+}
+.menu_vert_box{
+  border: 1px solid grey;
+  height: 150px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
-.hidden {
-  display: none;
-}
 
-textarea {
-  width: 100%;
-  height: 100px;
-  margin-top: 10px;
-}
-
-button {
-  margin-top: 5px;
-}

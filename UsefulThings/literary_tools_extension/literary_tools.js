@@ -1,39 +1,45 @@
-const notesBtn = document.getElementById("notesBtn");
-const notesSection = document.getElementById("notesSection");
-const saveBtn = document.getElementById("saveNote");
-const loadBtn = document.getElementById("loadNotes");
-const noteInput = document.getElementById("noteInput");
-const notesList = document.getElementById("notesList");
+// literary_tools.js
 
-// Toggle notes section
-notesBtn.addEventListener("click", () => {
-  notesSection.classList.toggle("hidden");
-});
+function consoleMsg(msg){
+  console.log(msg);
+}
 
-// Save note
-saveBtn.addEventListener("click", () => {
-  const note = noteInput.value;
+noteMenu = false;
+function ActivateNoteMenu(){
+  if(noteMenu === false){
+    noteMenu = true;
+    document.getElementById("note_menu").removeAttribute("hidden");
+  }
+  else{
+    noteMenu = false;
+    document.getElementById("note_menu").setAttribute("hidden", "");
+    CancelNewNoteEntry();
+    Return();
+  }
+}
+newNoteMenu = false;
+loadMenu = false;
+function ActivateNewNoteEntry(){
+  if(newNoteMenu === false){
+    newNoteMenu = true;
+    document.getElementById("new_note").removeAttribute("hidden");
+    document.getElementById("save_load_options").setAttribute("hidden", "");
+  }
+}
+function CancelNewNoteEntry(){
+  newNoteMenu = false;
+  document.getElementById("new_note").setAttribute("hidden", "");
+}
+function ActivateLoadMenu(){
+  if(loadMenu === false){
+    loadMenu = true;
+    document.getElementById("load_menu").removeAttribute("hidden");
+  }
+}
+function Return(){
+  if(loadMenu === true){
+    loadMenu = false;
+    document.getElementById("load_menu").setAttribute("hidden", "");
 
-  chrome.storage.local.get(["notes"], (result) => {
-    const notes = result.notes || [];
-    notes.push(note);
-
-    chrome.storage.local.set({ notes: notes }, () => {
-      noteInput.value = "";
-      alert("Note saved!");
-    });
-  });
-});
-
-// Load notes
-loadBtn.addEventListener("click", () => {
-  chrome.storage.local.get(["notes"], (result) => {
-    notesList.innerHTML = "";
-
-    (result.notes || []).forEach((note) => {
-      const li = document.createElement("li");
-      li.textContent = note;
-      notesList.appendChild(li);
-    });
-  });
-});
+  }
+}
