@@ -1,4 +1,8 @@
 // DOM elements
+document.addEventListener("DOMContentLoaded", () => {
+  hideAllSubmenus();
+});
+
 const noteBtn = document.getElementById("note_btn");
 const noteMenuDiv = document.getElementById("note_menu");
 const newNoteBtn = document.getElementById("new_note_btn");
@@ -34,7 +38,9 @@ function hideAllSubmenus() {
 
 // Show Note Menu
 noteBtn.addEventListener("click", () => {
-  noteMenuDiv.hidden = !noteMenuDiv.hidden;
+  const isHidden = noteMenuDiv.hidden;
+  hideAllSubmenus();
+  noteMenuDiv.hidden = !isHidden;
 });
 
 // Exit button

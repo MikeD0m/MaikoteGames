@@ -8,30 +8,57 @@
   <script src="menu.js" defer></script>
 </head>
 <body>
-  <h2>Literary Tools</h2>
-  <h3>By Maikote</h3>
-  <div id="literary_tool_container">
-    <button id="note_btn" class="menu_btn">Note Taker</button>
-    <div id="note_menu" hidden>
-      <button id="new_note_btn" class="menu_btn">New</button>
-      <button id="load_note_btn" class="menu_btn">Load</button>
-    </div>
-    <button id="exit_btn" class="menu_btn">Exit</button>
 
-    <!-- New Note -->
+  <header>
+    <h2>Literary Tools</h2>
+    <span class="byline">by Maikote</span>
+  </header>
+
+  <div id="literary_tool_container">
+
+    <!-- Main buttons -->
+    <button id="note_btn" class="menu_btn">
+      <span class="icon">✦</span> Note Taker
+    </button>
+
+    <!-- Note submenu -->
+    <div id="note_menu" hidden>
+      <button id="new_note_btn" class="menu_btn">
+        <span class="icon">+</span> New Note
+      </button>
+      <button id="load_note_btn" class="menu_btn">
+        <span class="icon">◈</span> Load Notes
+      </button>
+    </div>
+
+    <button id="exit_btn" class="menu_btn">
+      <span class="icon">✕</span> Close
+    </button>
+
+    <!-- New / Edit Note -->
     <div id="new_note" hidden>
-      <input type="text" id="note_name" placeholder="Note Name" />
+      <input type="text" id="note_name" placeholder="Note title..." />
       <textarea id="noteInput" placeholder="Write your thoughts..."></textarea>
-      <button id="save_note">Save</button>
-      <button id="cancel_note">Cancel</button>
+      <div class="note-action-row">
+        <button id="save_note" class="menu_btn">
+          <span class="icon">↓</span> Save
+        </button>
+        <button id="cancel_note" class="menu_btn">
+          <span class="icon">←</span> Cancel
+        </button>
+      </div>
     </div>
 
     <!-- Load Notes -->
     <div id="load_menu" hidden>
-      <p id="saved_notes_label">Saved Notes:</p>
+      <p id="saved_notes_label" hidden>Saved Notes</p>
       <div id="notes_list"></div>
-      <button id="return_btn">Return</button>
+      <button id="return_btn" class="menu_btn">
+        <span class="icon">←</span> Back
+      </button>
     </div>
+
   </div>
+
 </body>
 </html>
