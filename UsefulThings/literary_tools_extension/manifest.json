@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Literary Tools",
-  "version": "1.4",
+  "version": "2.0",
   "action": {
     "default_popup": "menu.html",
     "default_title": "Literary Tools"
@@ -15,5 +15,15 @@
       "description": "Open Literary Tools"
     }
   },
-  "permissions": []
+  "permissions": [
+    "identity",
+    "storage"
+  ],
+  "oauth2": {
+    "client_id": "1001388337983-djqn0f0a3db1e6840a1knnjk3ggs0oc8.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.events",
+      "https://www.googleapis.com/auth/calendar.readonly"
+    ]
+  }
 }

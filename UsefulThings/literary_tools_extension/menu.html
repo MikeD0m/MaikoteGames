@@ -30,11 +30,6 @@
         <span class="icon">◈</span> Load Notes
       </button>
     </div>
-
-    <button id="exit_btn" class="menu_btn">
-      <span class="icon">✕</span> Close
-    </button>
-
     <!-- New / Edit Note -->
     <div id="new_note" hidden>
       <input type="text" id="note_name" placeholder="Note title..." />
@@ -57,6 +52,75 @@
         <span class="icon">←</span> Back
       </button>
     </div>
+  
+    <!-- Calendar button -->
+    <button id="calendar_btn" class="menu_btn">
+      <span class="icon">◷</span> Calendar
+    </button>
+    <!-- Calendar View -->
+    <div id="calendar_view" hidden>
+
+      <!-- Month nav -->
+      <div class="cal-header">
+        <button id="cal_prev" class="nav-btn">‹</button>
+        <span id="cal_title" class="cal-title"></span>
+        <button id="cal_next" class="nav-btn">›</button>
+      </div>
+
+      <!-- Day-of-week labels -->
+      <div class="cal-grid">
+        <div class="day-label">Su</div>
+        <div class="day-label">Mo</div>
+        <div class="day-label">Tu</div>
+        <div class="day-label">We</div>
+        <div class="day-label">Th</div>
+        <div class="day-label">Fr</div>
+        <div class="day-label">Sa</div>
+      </div>
+
+      <!-- Day cells injected here -->
+      <div class="cal-grid" id="cal_days"></div>
+
+      <div class="cal-divider"></div>
+
+      <!-- Selected-day events -->
+      <p id="cal_day_label" class="events-label"></p>
+      <div id="cal_events_list"></div>
+
+      <div class="cal-divider"></div>
+
+      <!-- Actions -->
+      <button id="add_event_btn" class="menu_btn">
+        <span class="icon">+</span> Add Event
+      </button>
+      <button id="gcal_sync_btn" class="menu_btn gcal-btn">
+        <span class="icon">◈</span> Sync Google Calendar
+      </button>
+      <button id="cal_back_btn" class="menu_btn">
+        <span class="icon">←</span> Back
+      </button>
+
+    </div>
+
+    <!-- Add / Edit Event form -->
+    <div id="event_form" hidden>
+      <input type="text"  id="event_title"  placeholder="Event title..." />
+      <input type="date"  id="event_date"   />
+      <input type="time"  id="event_time"   />
+      <textarea id="event_notes" placeholder="Notes (optional)..." style="min-height:60px"></textarea>
+      <div class="note-action-row">
+        <button id="save_event_btn" class="menu_btn">
+          <span class="icon">↓</span> Save
+        </button>
+        <button id="cancel_event_btn" class="menu_btn">
+          <span class="icon">←</span> Cancel
+        </button>
+      </div>
+    </div>
+
+    <button id="exit_btn" class="menu_btn">
+      <span class="icon">✕</span> Close
+    </button>
 
   </div>
 

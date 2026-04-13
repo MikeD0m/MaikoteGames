@@ -242,3 +242,154 @@ input:focus, textarea:focus {
 [hidden] {
   display: none !important;
 }
+
+/* ── Calendar nav ── */
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 0 6px;
+}
+
+.cal-title {
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold-glow);
+  letter-spacing: 0.05em;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 1px 6px;
+  border-radius: var(--r);
+  transition: color 0.12s;
+}
+
+.nav-btn:hover { color: var(--gold); }
+
+/* ── Calendar grid ── */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+}
+
+.day-label {
+  text-align: center;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding: 3px 0;
+  letter-spacing: 0.04em;
+}
+
+.cal-day {
+  text-align: center;
+  font-size: 12px;
+  padding: 4px 2px;
+  border-radius: var(--r);
+  cursor: pointer;
+  color: var(--text-muted);
+  position: relative;
+  min-height: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.cal-day:not(.empty):hover { background: var(--bg-raised); color: var(--text); }
+.cal-day.empty { cursor: default; }
+.cal-day.today { color: var(--gold-glow); font-weight: bold; }
+.cal-day.selected { background: var(--bg-raised); border: 1px solid var(--gold-dim); }
+.cal-day.has-event { color: var(--text); }
+
+.dot {
+  width: 3px;
+  height: 3px;
+  background: var(--gold-dim);
+  border-radius: 50%;
+}
+
+/* ── Calendar divider / label ── */
+.cal-divider {
+  height: 1px;
+  background: var(--border-soft);
+  margin: 5px 0;
+}
+
+.events-label {
+  font-family: var(--font-head);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  padding: 2px 0 4px;
+}
+
+/* ── Event cards ── */
+.event_card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-left: 2px solid var(--gold-dim);
+  border-radius: var(--r);
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 4px;
+  transition: border-left-color 0.13s;
+}
+
+.event_card:hover { border-left-color: var(--gold); }
+
+.event_card button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: var(--r);
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.12s;
+}
+
+.event_card button:hover {
+  background: var(--bg-raised);
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+/* ── Google Calendar sync button ── */
+.gcal-btn {
+  color: var(--gold-dim);
+  border-color: var(--gold-dim);
+  font-size: 13px;
+}
+
+/* ── Event form date/time inputs ── */
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color 0.13s;
+  color-scheme: dark;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus {
+  border-color: var(--gold-dim);
+  background: var(--bg-raised);
+}
